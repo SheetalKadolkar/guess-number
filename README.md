@@ -38,6 +38,7 @@ Copy code
 python app.py
 5️⃣ Open the Game in Your Browser
 Visit: 👉 http://127.0.0.1:5000
+
 🐳 Run Using Docker
 1️⃣ Build the Docker Image
 bash
