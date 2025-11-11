@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guess the Number</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Guess the Number (1 - 100)</h1>
+
+    {% if message %}
+      <div class="message {{ result if result else '' }}">
+        {{ message }}
+      </div>
+    {% else %}
+      <div class="message">Enter a number and press Guess!</div>
+    {% endif %}
+
+    <form method="post" class="guess-form">
+      <input type="text" name="guess" placeholder="Enter your guess" autocomplete="off" />
+      <button type="submit">Guess</button>
+    </form>
+
+    <div class="info">
+      <p>Attempts: {{ attempts }}</p>
+      {% if history %}
+        <p>Recent guesses:</p>
+        <ul class="history">
+          {% for h in history|reverse %}
+            <li class="{{ h.result }}">{{ h.guess }} — {{ h.result }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+
+    <form method="post" action="{{ url_for('reset') }}">
+      <button type="submit" class="reset">Start New Game</button>
+    </form>
+
+    <footer>
+      <small>Simple Flask app — refresh or click "Start New Game" to get a new number.</small>
+    </footer>
+  </div>
+</body>
+</html>
