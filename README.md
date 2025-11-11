@@ -3,6 +3,9 @@ A fun and simple number guessing web app built using Python Flask.
 The player tries to guess a randomly generated number between 1 and 100, with hints like “Too High”, “Too Low”, or “Correct!”.
 
 📸 Screenshot
+![Guess The Number Web App](https://github.com/sheetalkadolkar/guess-number/blob/main/guess-number-iamge.PNG)
+
+![Guess The Number Web App](https://github.com/sheetalkadolkar/guess-number/raw/main/guess-number.PNG)
 
 🌟 Features
 🔢 Random number generation on each game start
